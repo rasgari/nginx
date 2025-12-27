@@ -13,3 +13,16 @@ kubectl get services
 kubectl port-forward service/nginx-service 8080:80
 
 # دسترسی: http://localhost:8080
+
+
+---
+
+Scale و Autoscaling
+
+# Scale دستی
+kubectl scale deployment nginx-deployment --replicas=5
+
+# Horizontal Pod Autoscaler
+kubectl autoscale deployment nginx-deployment --cpu-percent=50 --min=2 --max=10
+
+---
