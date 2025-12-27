@@ -26,3 +26,20 @@ kubectl scale deployment nginx-deployment --replicas=5
 kubectl autoscale deployment nginx-deployment --cpu-percent=50 --min=2 --max=10
 
 ---
+
+Troubleshooting سریع
+
+
+# لاگ pod ها
+kubectl logs -l app=nginx -f
+
+# Describe pod
+kubectl describe pod <pod-name>
+
+# Events
+kubectl get events --sort-by='.lastTimestamp'
+
+# Test connectivity
+kubectl exec -it <pod-name> -- curl localhost
+
+---
