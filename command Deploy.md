@@ -59,3 +59,32 @@ Ingress controller (nginx-ingress یا traefik) نصب کنید
 
 ---
 
+
+# کلون یا ساخت پوشه
+mkdir nginx-docker && cd nginx-docker
+
+# فایل‌ها را کپی کنید
+# (docker-compose.yml, nginx.conf, html/index.html)
+
+# راه‌اندازی
+docker compose up -d
+
+# لاگ‌ها
+docker compose logs -f nginx
+
+# وضعیت
+docker compose ps
+
+# تست
+curl http://localhost
+
+# متوقف کردن
+docker compose down
+
+# پاک کردن volumes (داده‌ها)
+docker compose down -v
+
+
+---
+
+
