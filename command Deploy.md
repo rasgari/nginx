@@ -43,3 +43,19 @@ kubectl get events --sort-by='.lastTimestamp'
 kubectl exec -it <pod-name> -- curl localhost
 
 ---
+
+نکات مهم برای Production
+از nginx:alpine یا nginx:1.xx استفاده کنید (کوچک‌تر)
+
+Resource limits تنظیم کنید
+
+Probes فعال کنید
+
+Readiness/Liveness برای health check
+
+Horizontal Pod Autoscaler فعال کنید
+
+Ingress controller (nginx-ingress یا traefik) نصب کنید
+
+---
+
