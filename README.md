@@ -89,13 +89,27 @@ nginx:
 
 ```
 
-مقایسه با Apache
-ویژگی	NGINX	Apache
-Static Files	⭐⭐⭐⭐⭐	⭐⭐⭐
-Dynamic (PHP)	⭐⭐⭐	⭐⭐⭐⭐⭐
-RAM Usage	کم	زیاد
-Connections	۵۰K+	۱K-۵K
-Config	JSON-like	XML-like
+## مقایسه کامل NGINX و Apache
+
+| ویژگی                | NGINX                          | Apache                          |
+|-----------------------|--------------------------------|---------------------------------|
+| **Static Files**      | ⭐⭐⭐⭐⭐<br>فوق‌العاده سریع (Event-driven) | ⭐⭐⭐<br>خوب اما کندتر |
+| **Dynamic (PHP)**     | ⭐⭐⭐<br>با FastCGI/PHP-FPM      | ⭐⭐⭐⭐⭐<br>mod_php بومی |
+| **RAM Usage**         | کم (۵-۱۰MB per 10K conn)       | زیاد (۵۰-۱۰۰MB per 1K conn)    |
+| **Connections**       | ۵۰K+ همزمان                    | ۱K-۵K (MPM Event بهتر)         |
+| **Config Syntax**     | JSON-like، ساده                | XML-like، پیچیده               |
+| **معماری**           | Asynchronous, Non-blocking     | Process/Thread per request      |
+| **Load Balancing**    | بومی عالی                     | با mod_proxy                    |
+| **Reverse Proxy**     | ⭐⭐⭐⭐⭐                         | ⭐⭐⭐⭐                           |
+| **HTTP/2 & HTTP/3**   | بومی                           | ماژول اضافی                    |
+| **ماژول‌ها**         | Compile-time (ثابت)            | Dynamic (Runtime)               |
+| **Reload**            | Zero-downtime (`nginx -s reload`) | نیاز به restart              |
+| **Caching**           | بومی قدرتمند                  | با ماژول                        |
+| **Gzip**              | بهینه                          | خوب                             |
+| **سهولت یادگیری**    | ⭐⭐⭐⭐⭐                         | ⭐⭐⭐                            |
+| **اکوسیستم**         | محدود                          | بسیار گسترده                   |
+
+
 
 دستورات حیاتی Admin
 ```
